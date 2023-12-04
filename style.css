@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: var(--Light-pink);
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-pink: hsl(275, 100%, 97%);
+  --Grayish-purple: hsl(292, 16%, 49%);
+  --Dark-purple: hsl(292, 42%, 14%);
+  --Work-sans: 'Work Sans', sans-serif; /* Fix: Removed extra quotes */
+}
+
+.background-cover{
+  width: 100%;
+  height: 33vh;
+  background-image: url(./assets/images/background-pattern-desktop.svg);
+  background-position: center;
+  background-size: cover;
+}
+.accordian-container {
+  width: 35vw;
+  background-color: white;
+  margin: 0 auto;
+  padding: 48px 32px;
+  border-radius: 25px;
+  position: absolute;
+  top: 150px;
+  left: 50%; /* Set left to 50% */
+  transform: translateX(-50%); /* Translate back by 50% of its own width */
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+
+.accordian-header{
+  display: flex;
+  column-gap: 24px;
+  margin-bottom: 36px;
+}
+
+.accordian-header h1{
+  font-family: var(--Work-sans);
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.question-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-container h2:hover{
+  cursor: pointer;
+  color:#AD28EB;
+  transition: color 0.3s ease-in-out;
+}
+
+.question-container h2{
+  font-family: var(--Work-sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--Dark-purple);
+}
+
+.question-container button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.answer-container p{
+  font-family: var(--Work-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--Grayish-purple);
+}
+
+hr{
+  color: var(--Dark-purple);
+  height: 0.5px;
+  opacity: 0.25;
+  margin: 16px 0;
+}
+
+Add this to your existing styles
+.question-container.open {
+  background-color: #f9f9f9;
+}
+
+.answer-container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease
+}
+
+@media screen and (max-width:440px) {
+  .accordian-container {
+    width: calc(100vw - 32px);
+    background-color: white;
+    margin: 0 auto;
+    padding: 48px 32px;
+    border-radius: 25px;
+    position: absolute;
+    top: 150px;
+    left: 50%; /* Set left to 50% */
+    transform: translateX(-50%); /* Translate back by 50% of its own width */
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  }
+}
